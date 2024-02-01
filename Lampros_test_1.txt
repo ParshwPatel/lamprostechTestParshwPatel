@@ -1,0 +1,10 @@
+SELECT
+  evt_tx_from AS address,
+  contract_address,
+  evt_tx_to AS receiver,
+  value
+FROM erc20_optimism.evt_Transfer
+WHERE
+  "from" = FROM_HEX('5B8F3fb479571Eca6A06240b21926Db586Cdf10f')
+  AND contract_address = FROM_HEX('4200000000000000000000000000000000000042')
+  limit 10

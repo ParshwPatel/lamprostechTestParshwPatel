@@ -1,0 +1,8 @@
+SELECT
+  block_date,
+  AVG(gas_price) AS avg_gas_price,
+  SUM(value) AS total_value
+FROM ethereum.transactions
+GROUP BY
+  block_date
+LIMIT 10
